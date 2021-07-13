@@ -1,5 +1,5 @@
 import React from "react";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
 import EarthDayMap from "../../assets/textures/8k_earth_daymap.jpg";
@@ -20,6 +20,14 @@ export function Earth(props) {
       <ambientLight intensity={1} />
       <mesh>
         <sphereGeometry args={[1.005, 32, 32]} />
+        <Stars
+          radius={300}
+          depth={60}
+          count={20000}
+          factor={7}
+          saturation={0}
+          fade={true}
+        />
         <meshPhongMaterial
           map={cloudsMap}
           opacity={0.4}
